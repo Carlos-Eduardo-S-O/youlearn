@@ -5,5 +5,10 @@
 </ion-header>
 
 <ion-content>
-  <app-feedcard name="Inglês1" level="iniciante" description="Curso de inglês" imgsrc="../../../../../assets/course.png"></app-feedcard>
+  <app-feedcard *ngFor="let course  of getCourses()"
+    [name]="course.name" 
+    [level]="course.level" 
+    [description]="course.description" 
+    [imgname]="course.imgname">
+  </app-feedcard>
 </ion-content>

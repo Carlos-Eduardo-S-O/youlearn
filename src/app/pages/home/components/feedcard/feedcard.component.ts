@@ -9,7 +9,7 @@ export class FeedcardComponent implements OnInit {
   @Input('name') courseName: string;
   @Input('description') courseDescription: string;
   @Input('level') courseLevel: string;
-  @Input('imgsrc') imageSource: string;
+  @Input('imgname') imageName: string;
 
   constructor() { }
 
@@ -28,6 +28,6 @@ export class FeedcardComponent implements OnInit {
   }
 
   getImageSource = (): string => {
-    return this.imageSource;
+    return "../../../../../assets/" + this.imageName;
   }
 }
