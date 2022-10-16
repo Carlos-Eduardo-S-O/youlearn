@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-feedcard',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedcard.component.scss'],
 })
 export class FeedcardComponent implements OnInit {
-  private courseName: string = "Inglês";
-  private courseDescription: string = "Curso de inglês";
-  private levelCourse: string = "Iniciante";
-  private imageSource: string = "src/assets/course.png";
+  @Input('name') courseName: string;
+  @Input('description') courseDescription: string;
+  @Input('level') courseLevel: string;
+  @Input('imgsrc') imageSource: string;
 
   constructor() { }
 
@@ -23,8 +23,8 @@ export class FeedcardComponent implements OnInit {
     return this.courseDescription;
   }
 
-  getLevelCourse = (): string => {
-    return this.levelCourse;
+  getCourseLevel = (): string => {
+    return this.courseLevel;
   }
 
   getImageSource = (): string => {

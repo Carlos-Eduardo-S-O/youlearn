@@ -1,5 +1,13 @@
 <ion-content>
   <ion-card>
-    <ion-img src="../../../../../assets/course.png"></ion-img>
+    <ion-img [src]="getImageSource()"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Nome: {{getCourseName()}}</ion-card-title>
+      <ion-card-subtitle>Nível: {{getCourseLevel()}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text>{{getCourseDescription()}}</ion-text>
+    </ion-card-content>
   </ion-card>
 </ion-content> 
