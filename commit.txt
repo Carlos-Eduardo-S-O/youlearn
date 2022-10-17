@@ -1,1 +1,0 @@
-Adding imgs to assets and creating feed service. 

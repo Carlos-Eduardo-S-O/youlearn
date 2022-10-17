@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { course } from './models/course';
 import { FeedService } from './services/feed.service';
 
@@ -10,12 +11,19 @@ import { FeedService } from './services/feed.service';
 export class HomePage implements OnInit {
   private courses: course[];
   
-  constructor(private feedService: FeedService) { 
+  constructor(
+    private feedService: FeedService,
+    private router: Router
+    ) { 
     this.courses = feedService.getCourses();
   }
 
   ngOnInit() {
-    
+
+  }
+
+  goToDetails = (courseId: course): void => {
+    this.router.navigateByUrl('details', {state: {courseId: courseId}}  );
   }
 
   public getCourses = ():course[] => {

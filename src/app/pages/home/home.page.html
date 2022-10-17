@@ -5,10 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <app-feedcard *ngFor="let course  of getCourses()"
+  <app-feedcard 
+  *ngFor="let course  of getCourses()"
     [name]="course.name" 
     [level]="course.level" 
     [description]="course.description" 
-    [imgname]="course.imgname">
+    [imgname]="course.imgname"
+  (click)="goToDetails(course.id)"  
+  >
   </app-feedcard>
 </ion-content>

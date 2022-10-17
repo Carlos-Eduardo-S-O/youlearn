@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>  
+    <div class="center">
+      <ion-img [src]="getImageSource()"></ion-img>  
+    </div>
+    <ion-card-header>
+      <ion-card-title>Nome: {{getCourse().name}}</ion-card-title>
+      <ion-card-subtitle>Nível: {{getCourse().level}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text>{{getCourse().description}}</ion-text>
+    </ion-card-content>
+    
+    <div class="center">
+      <ion-button>
+        Acessar o curso
+      </ion-button>
+    </div>
+    
+  </ion-card>
+</ion-content>
